@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kogohirozzz.sgms.dao.ScoreDao">
+    <update id="updateScoreBySid">
+        update score set score = #{score} where sid = #{sid} and cid = #{cid} and type = #{type}
+    </update>
+    <delete id="delBySidInt">
+        delete from score where sid = #{sid}
+    </delete>
+    <delete id="delBySidAndCidAndType">
+        delete from score where sid = #{sid} and cid = #{cid} and type = #{type}
+    </delete>
+
+    <select id="findMyScoreBySid" resultType="com.kogohirozzz.sgms.domain.Score">
+        select * from score where sid = #{sid}
+    </select>
+</mapper>

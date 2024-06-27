@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kogohirozzz.sgms.dao.ClassDao">
+    <delete id="deleteBySclass">
+        delete from class where sclass = #{sclass}
+    </delete>
+
+    <select id="findClassnameBySclass" resultType="java.lang.Integer">
+        select classname from class where sclass = #{sclass}
+    </select>
+    <select id="findSclassByClassname" resultType="java.lang.Integer">
+        select sclass from class where classname = #{classname}
+    </select>
+</mapper>

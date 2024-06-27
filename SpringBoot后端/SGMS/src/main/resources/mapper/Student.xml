@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kogohirozzz.sgms.dao.StudentDao">
+    <update id="updatePasswordBySid">
+        update student set password = #{password} where sid = #{sid}
+    </update>
+    <update id="updateStudentNotPWDBySid">
+        update student set name = #{name} , sclass = #{sclass} , sgender = #{sgender} where sid =#{sid}
+    </update>
+    <update id="updateSclass">
+        update student set sclass = null where sclass = {sclass}
+    </update>
+    <delete id="delBySid">
+        delete from student where sid = #{sid}
+    </delete>
+
+    <select id="findStudentBySid" resultType="com.kogohirozzz.sgms.domain.Student">
+        select * from student where sid = #{sid} and password = #{password}
+    </select>
+    <select id="findNameBySid" resultType="java.lang.String">
+        select name from student where sid = #{sid}
+    </select>
+    <select id="findSclassBySid" resultType="java.lang.Integer">
+        select sclass from student where sid = #{sid}
+    </select>
+    <select id="selectStudentSUMByClass" resultType="java.lang.Integer">
+        select count(sclass) from student where sclass = #{sclass}
+    </select>
+    <select id="findStudentBySclass" resultType="com.kogohirozzz.sgms.domain.Student">
+        select * from student where sclass = #{sclass}
+    </select>
+</mapper>

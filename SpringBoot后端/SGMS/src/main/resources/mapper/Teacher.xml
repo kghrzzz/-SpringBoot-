@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kogohirozzz.sgms.dao.TeacherDao">
+    <update id="updatePasswordByTid">
+        update teacher set password = #{password} where tid = #{tid}
+    </update>
+    <update id="updateTeacherNotPWDByTid">
+        update teacher set name = #{name} , title = #{title} , gender = #{gender} where tid =#{tid}
+    </update>
+    <delete id="delByTid">
+        delete from teacher where tid = #{tid}
+    </delete>
+
+    <select id="findTeacherByTid" resultType="com.kogohirozzz.sgms.domain.Teacher">
+        select * from teacher where tid = #{tid} and password = #{password}
+    </select>
+</mapper>
