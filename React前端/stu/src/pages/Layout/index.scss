@@ -1,0 +1,81 @@
+.ant-layout {
+  height: 100%;
+}
+
+.header {
+  padding: 0;
+}
+
+.logo {
+  width: 200px;
+  height: 60px;
+}
+
+.layout-content {
+  overflow-y: auto;
+}
+
+.user-info {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding-right: 20px;
+  color: #000;
+
+  .user-name {
+    margin-right: 20px;
+    color: black;
+  }
+
+  .user-logout {
+    display: inline-block;
+    cursor: pointer;
+  }
+}
+.ant-layout-header {
+  padding: 0 !important;
+}
+.Btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100px;
+  height: 40px;
+  border: none;
+  padding: 0px 20px;
+  background-color: rgb(0,0,0);
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 10px;
+  transition-duration: .3s;
+}
+
+.svg {
+  width: 18px;
+  position: absolute;
+  right: 0;
+  margin-right: 20px;
+  fill: white;
+  transition-duration: .3s;
+}
+
+.Btn:hover {
+  color: transparent;
+  background-color: white;
+  transition-duration: .3s;
+}
+
+.Btn:hover svg {
+  right: 39%;
+  margin: 0;
+  padding: 0;
+  border: none;
+  fill: red;
+  transition-duration: .3s;
+}
+
+.hidden-submenu {
+  display: none !important;
+}
